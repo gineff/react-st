@@ -2,8 +2,12 @@ import './App.css'
 import { Suspense, lazy } from 'react'
 import reactLogo from './assets/react.svg'
 
+// Утилита для задержки
+//const delay = (ms:number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 // Works also with SSR as expected
-const Card = lazy(() => import('./Card'))
+//const Card = lazy(()=>import('./Card')) 
+import Card from './Card';
 
 function App() {
   return (

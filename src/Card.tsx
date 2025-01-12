@@ -1,18 +1,21 @@
-import { useState } from 'react'
+'use client';
+//import { useActionState } from "react";
+import requestEmail from "./requestUsername";
 
-function Card() {
-  const [count, setCount] = useState(0)
+async function Card() {
+  //const [state, formAction] = useActionState(requestUsername, 'n/a');
 
-  return (
-    <div className="card">
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
+  const email = await requestEmail();
+  return <div>Email: {email}</div>; 
+  
+/*  return (
+    <form className="card">
+     <button formAction={formAction}>count is {state}</button>
       <p>
         Edit <code>src/App.tsx</code> and save to test HMR
       </p>
-    </div>
-  )
+    </form>
+  )*/
 }
 
 export default Card
